@@ -2,6 +2,8 @@ package entities;
 
 public class OrdemItem {
 
+
+
     private Integer quantity;
     private Double price;
     // composição com a classe Product
@@ -46,6 +48,12 @@ public class OrdemItem {
     }
     @Override
     public String toString(){
-        return getProduct().getName();
+        return getProduct().getName()
+                + ", $"
+                + String.format("%.2f", price)
+                + ", quantity: "
+                + quantity
+                + ", subtotal: $"
+                + String.format("%.2f", subTotal());
     }
 }
